@@ -1,6 +1,6 @@
 const connection = require("../config/connection.js");
 
-printQuestionMarks(num) =>{
+function printQuestionMarks (num){
   let arr = [];
 
   for (let i = 0; i < num; i++) {
@@ -10,7 +10,7 @@ printQuestionMarks(num) =>{
   return arr.toString();
 };
 
-objToSql(ob) =>{
+function objToSql(ob) {
   let arr = [];
 
   for (let key in ob) {

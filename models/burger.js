@@ -12,11 +12,13 @@ var burger = {
             cb(result);
         });
     },
-    update: function(objColVals, condition, cb) {
-        orm.update("burgers", objColVals, condition, function(result) {
-            cb(result);
-        });
-    }
+    update: function(id, cb) {
+        var condition = "id=" + id;
+        orm.update("burgers", {
+          devoured: true
+        }, condition, cb);
+      }
+
 };
 
 module.exports = burger;

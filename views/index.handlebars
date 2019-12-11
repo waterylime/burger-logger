@@ -31,8 +31,8 @@
 						<div class="input-group">
 							<p class="lead"> {{this.burger_name}} </p>
 							<span class="input-group-btn">
-								<form action="burgers/{{this.id}}?_method=PUT" method="POST">
-									<input type="hidden" name="devoured" value="true">
+								<form class="devour-form button-size">
+									<input class = 'burger_id' type="hidden" name="devoured" value="{{this.id}}">
 									<button id="button" class="btn btn-default btn-lg" type="submit">OM NOM NOM!</button>
 								</form>
 							</span>
@@ -62,4 +62,4 @@
 	</div>
 </div>
 
-<iframe src="https://giphy.com/embed/HQ2Slp9yEkX72" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+{{!-- <iframe src="https://giphy.com/embed/HQ2Slp9yEkX72" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> --}}
