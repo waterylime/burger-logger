@@ -1,7 +1,7 @@
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 const app = express();
-const db = require('./mobles');
+const db = require('./modles');
 
 app.use(express.static('public'));
 
