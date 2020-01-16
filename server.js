@@ -1,7 +1,7 @@
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 const app = express();
-const db = require('./modles');
+const db = require('./models');
 
 app.use(express.static('public'));
 
