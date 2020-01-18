@@ -1,36 +1,38 @@
-const express = require("express");
-const burger = require("../models/burger.js");
-const path = require("path");
+var express = require("express");
 
-const router = express.Router();
+var router = express.Router();
+
+var burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
-  burger.selectAll(function(data) {
-    var hbsObject = {
-      burgers: data
-    };
-    //console.log(hbsObject);
-    res.render("index", hbsObject);
-  });
+    res.redirect("/burgers");
 });
 
-
+router.get("/burgers", function(req, res) {
+    burger.all(function(data) {
+        var handlebarsObject = {
+        burgers: data
+    };
+    console.log(handlebarsObject);
+    res.render("index", handlebarsObject);
+    });
+});
 
 router.post("/burgers", function(req, res) {
-  console.log(req.body.name);
-  burger.insertOne(["burger_name"], [req.body.name], function() {
-    res.redirect("/");
-  });
-
-  //console.log(req.params, req.body);
+    burger.create(
+        ["burger_name"], [req.body.b_name], function() {
+            res.redirect("/burgers");
+        });
 });
 
 router.put("/burgers/:id", function(req, res) {
-  burger.updateOne(req.params.id, function(result) {
-    console.log(result);
+    var condition = "id = " + req.params.id;
+    console.log("condition", condition);
 
-    res.sendStatus(200);
-  });
+    burger.update(
+    {"devoured": req.body.devoured}, condition, function(data) {
+            res.redirect("/burgers");
+    });
 });
 
 module.exports = router;

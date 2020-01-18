@@ -1,25 +1,27 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "a full stack app that allows users to create burgers, eat them, and uses a database to keep track of all burgers made",
+  "description": "A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. Follows MVC design pattern and uses Node and MySQL to query and route data and Handlebars to generate HTML. ",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tzvik15/Burger.git"
+    "url": "git+https://github.com/lexluther2125/burger.git"
   },
-  "author": "Daniel Nester",
+  "author": "Lexi Majoue",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tzvik15/Burger/issues"
+    "url": "https://github.com/lexluther2125/burger/issues"
   },
-  "homepage": "https://github.com/tzvik15/Burger#readme",
+  "homepage": "https://github.com/lexluther2125/burger#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "mysql": "^2.17.1"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1"
   }
 }

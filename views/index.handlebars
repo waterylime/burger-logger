@@ -1,54 +1,57 @@
-<div id="title">
-
-<h1>DumBurger!</h1>
-
-<h2>Create the burger of your dreams!</h2>
-</div>
-
-<div id="created">
-<h3>*Drool*</h3>
+<div class="container" id="container">
+    <div class="jumbotron" id="header">
+    <h1 id="eat"><strong>Eat-Da-Burger!</strong></h1>
+        <img src="/assets/img/burger.png" id="burger">
+    </div>
 
 
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="create-update-form" action="/burgers" method="POST">
 
-<ul class="list-group">
-	{{#each burgers}}
-	{{#unless this.devoured}}
-	<li class="list-group-item">
-		<div class="input-group">
-			<p> {{this.burger_name}} </p>
-			<img src="../assets/images/burger.jpg" alt="picture of a burger" style="max-width: 50px; max-height:50px;">
-			<form>
-				<input class='burger_id' type="hidden" name="devoured" value="{{this.id}}">
-				<button class="btn" type="submit">OM NOM NOM!</button>
-			</form>
+			<div class="form-group" id="add">
+                    <h3 class="title">What's in a name? <u>EVERYTHING</u>. Add your burger name here:</h3>
+                    <br>
+                    <textarea id="box" class="form-control input-lg" type="text" name="b_name" rows="3"></textarea>
+                    </div>
+                <button type="submit" id="order" class="bt btn-default btn-lg">Order Up!</button>
+                </form>
+        </div>
+    </div>
+   <div>
+   <br>
+   <hr id="line">
+		<div class="col-sm-4" id="yum">
+			<div class="panel-panel default">
+			<h3 class="title">Say hello to my little friend:</h3>
+				<ul class="list-group">
+				{{#each burgers}}
+					{{#unless this.devoured}}
+					<li class="list-group-item">
+						<div class="input-group">
+							<p class="lead"> {{this.burger_name}} </p>
+							<span class="input-group-btn">
+								<form action="burgers/{{this.id}}?_method=PUT" method="POST">
+									<input type="hidden" name="devoured" value="true">
+									<button id="button" class="btn btn-default btn-lg" type="submit">OM NOM NOM!</button>
+								</form>
+							</span>
+						</div>
+					</li>
+					{{/unless}}
+				{{/each}}
+			</ul>
 		</div>
-	</li>
-	{{/unless}}
-	{{/each}}
-</ul>
-</div>
-
-<div id="add">
-<h2>Add a Burger</h2>
-<p>Go on... you know you want to... </br>describe this burger like no vegetarian is watching... </br>or maybe like they ARE watching...</br> whichever you prefer... </br>I won't judge...</p>
-<form class="create-form">
-
-	<div class="form-group">
-		<textarea type="text" id="bur" name="b_name"></textarea>
 	</div>
-
-
-	<button type="submit" id="subBtn">Add a Burger</button>
-</form>
 </div>
-
-		<div  id="devoured">
-		<h3 id="heaven">I wish I had another one:</h3>
-			<div>
-				<ul>
+<div>
+		<div class="col-sm-4" id="devoured">
+		<h3 id="heaven">All good burgers go to heaven:</h3>
+			<div class="panel panel-default">
+				<ul class="list-group">
 				{{#each burgers}}
 					{{#if this.devoured}}
-					<li>
+					<li class="list-group-item">
 						<p class="lead">{{this.burger_name}} </p>
 					</li>
 					{{/if}}
@@ -57,5 +60,6 @@
 			</div>
 		</div>
 	</div>
+</div>
 
-
+<iframe src="https://giphy.com/embed/HQ2Slp9yEkX72" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
