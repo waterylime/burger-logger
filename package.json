@@ -1,31 +1,25 @@
 {
-  "name": "burger-logger",
+  "name": "burger",
   "version": "1.0.0",
-  "description": "### Overview",
+  "description": "a full stack app that allows users to create burgers, eat them, and uses a database to keep track of all burgers made",
   "main": "server.js",
-  "dependencies": {
-    
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    
-    
-    "mysql": "^2.17.1"
-    
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/waterylime/burger-logger.git"
+    "url": "git+https://github.com/tzvik15/Burger.git"
   },
-  "author": "",
+  "author": "Daniel Nester",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/waterylime/burger-logger/issues"
+    "url": "https://github.com/tzvik15/Burger/issues"
   },
-  "homepage": "https://github.com/waterylime/burger-logger#readme"
+  "homepage": "https://github.com/tzvik15/Burger#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  }
 }

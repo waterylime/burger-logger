@@ -1,24 +1,17 @@
-# burger-logger
-# Node Express Handlebars
+# DumBurger
 
-### Overview
+## Description
 
-In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
+This is a full-stack app that is hosted on Heroku. It allows users to input the burger they desire, storing it in a database, playing a sound, and displaying it in the left, created burgers, side. Each burger that has been created has a devour button. When pressed, a sound is played, the burger is moved to the eaten side of the screen, and the database is updated.
 
-### Read This
+## Functionality
 
-When trying to connect remotely to your Heroku database on an open network such as a coffee shop, library, or even your University WiFi, it will be blocked. If you are experiencing a Heroku connection error, this could be why.
+This app follows the full-stack app architecture, including an ORM, a controller, a server, models, and public assets. While simple in operation, there is quite a bit of functionality under the hood. The app allows for GET, POST, and UPDATE routes, and has server-side responses to the various requests. The app pulls all from the database upon page reload, thus updating the display - when a command is made by the user, a reload is triggered (after a sound is played. The reload is timed to execute once the sound has completed playing).
 
-### Important
+### Libraries, Technologies, and Modules used
 
-* **This assignment must be deployed.** Be sure to utilize the [MYSQL Heroku Deployment Guide](../../03-Supplemental/MySQLHerokuDeploymentProcess.pdf) in order to deploy your assignment.
+This app uses the following external technologies, modules, and libraries: JQuery, DOTENV, express, express-handlebars, mysql, JAWSdb.
 
-### Before You Begin
+## Deployed Link
 
-* Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
-
-* Whenever a user submits a burger's name, your app will display the burger on the left side of the page -- waiting to be devoured.
-
-* Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
-
-* Your app will store every burger in a database, whether devoured or not.
+https://morning-beach-14851.herokuapp.com/
